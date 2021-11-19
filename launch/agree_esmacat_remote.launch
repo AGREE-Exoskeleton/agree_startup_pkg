@@ -1,0 +1,22 @@
+<launch>
+
+    <machine name="esmabox" address="192.168.0.10" user="esmacat" env-loader="/opt/ros/melodic/env_remote.sh" default="true" />
+    <include file="$(find agree_fsm_pkg)/launch/FSM_test.launch" />
+
+<node   machine="esmabox"
+        name="agree_esmacat_rt"
+        pkg="agree_esmacat_pkg"
+        type="agree_esmacat_rt.sh"
+        output="screen"
+        launch-prefix="lxterminal -e"
+        >
+</node>
+<node
+    machine="esmabox"
+    name="agree_interface"
+    pkg="agree_esmacat_pkg"
+    type="agree_ros_interface"
+    output="screen"
+    launch-prefix="lxterminal -e"
+    />
+</launch>

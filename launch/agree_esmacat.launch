@@ -1,0 +1,18 @@
+<launch>
+<node
+        name="agree_esmacat_rt"
+        pkg="agree_esmacat_pkg"
+        type="agree_esmacat_rt.sh"
+        output="screen"
+        launch-prefix="lxterminal -e"
+        >
+</node>
+<node
+    name="agree_interface"
+    pkg="agree_esmacat_pkg"
+    type="agree_ros_interface"
+    output="screen"
+    launch-prefix="lxterminal -e"
+    />
+
+</launch>

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=AGREE Control
+Comment=EtherCAT - AGREE Control
+Exec=bash -c " cd /home/$USER/AGREE_ws/src/agree_startup_pkg/scripts && ./run_agree_control_ssh.sh"
+Terminal=true
+Icon=/usr/local/share/icons/ethercat.png
+Type=Application
+Categories=ROS;
+StartupNotify=true
+Name[en_US]=AGREE Control
+GenericName[en_US]=AGREE Control

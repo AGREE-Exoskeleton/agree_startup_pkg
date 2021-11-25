@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name= AGREE Platform
+Comment=ROS - AGREE exoskeleton
+Exec=bash -c " source /opt/ros/melodic/setup.bash && source /home/smartbox/AGREE_ws/devel/setup.bash && export ROS_IP=192.168.0.11 && export ROS_MASTER_URI=http://$ROS_IP:11311 && roslaunch agree_startup_pkg agree_startup.launch"
+Terminal=true
+Icon=/usr/local/share/icons/icon.png
+Type=Application
+Categories=ROS;
+StartupNotify=true

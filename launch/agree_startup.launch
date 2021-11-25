@@ -1,0 +1,28 @@
+
+<launch>
+
+    <rosparam file="$(find agree_fsm_pkg)/config/exercise.yaml" />
+    <rosparam file="$(find agree_fsm_pkg)/config/general.yaml" />
+    <rosparam file="$(find agree_fsm_pkg)/config/physiological_param.yaml" />
+    <rosparam file="$(find agree_fsm_pkg)/config/evaluation.yaml" />
+    <rosparam file="$(find agree_fsm_pkg)/config/test.yaml" />
+
+    <rosparam file="$(find mat_module)/config/parameters.yaml" />
+    <rosparam file="$(find rf_module)/config/parameters.yaml" />
+
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+
+    <node name="GUI" pkg="agree_gui" type="agree_gui" required="true"/>
+    <node name="FSM" pkg="agree_fsm_pkg" type="agree_fsm" output="screen"/>
+    <node name="EVAL" pkg="agree_evaluation_pkg" type="evaluation_node" />
+    <node name="MAT" pkg="mat_module" type="mat_module"/>
+    <node name="FK" pkg="fk_ros_node" type="fk_ros_node_node" />
+
+    <node name="ALIVE" pkg="node_alive" type="node_alive_server" />
+    <node name="CRTL" pkg="agree_fsm_pkg" type="node_controller.py" />
+
+<machine name="esmabox" address="192.168.0.10" user="esmacat" env-loader="/opt/ros/melodic/env_remote.sh" default="true" />
+
+    <node machine="esmabox" name="agree_interface" pkg="agree_esmacat_pkg" type="agree_ros_interface" output="screen"/>
+
+</launch>

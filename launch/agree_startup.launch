@@ -14,7 +14,7 @@
 
     <node name="GUI" pkg="agree_gui" type="agree_gui" required="true"/>
     <node name="FSM" pkg="agree_fsm_pkg" type="agree_fsm" output="screen"/>
-    <node name="EVAL" pkg="agree_evaluation_pkg" type="evaluation_node" />
+    <!-- <node name="EVAL" pkg="agree_evaluation_pkg" type="evaluation_node" /> -->
     <node name="MAT" pkg="mat_module" type="mat_module"/>
     <node name="FK" pkg="fk_ros_node" type="fk_ros_node_node" />
 
@@ -23,6 +23,6 @@
 
 <machine name="esmabox" address="192.168.0.10" user="esmacat" env-loader="/opt/ros/melodic/env_remote.sh" default="true" />
 
-    <node machine="esmabox" name="agree_interface" pkg="agree_esmacat_pkg" type="agree_ros_interface" output="screen"/>
+    <node machine="esmabox" name="ESMACAT" pkg="agree_esmacat_pkg" type="agree_ros_interface" output="screen"/>
 
 </launch>
